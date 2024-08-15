@@ -12,21 +12,21 @@ const Hamburger = ({ ...rest }) => {
     >
       <path
         d="M19.5834 27.4167H74.4167"
-        stroke="#55BD8B"
+        stroke={rest.fill ?? "#55BD8B"}
         strokeWidth="7.83333"
         strokeLinecap="square"
         strokeLinejoin="round"
       />
       <path
         d="M19.5834 47H74.4167"
-        stroke="#55BD8B"
+        stroke={rest.fill ?? "#55BD8B"}
         strokeWidth="7.83333"
         strokeLinecap="square"
         strokeLinejoin="round"
       />
       <path
         d="M19.5834 66.5833H47"
-        stroke="#55BD8B"
+        stroke={rest.fill ?? "#55BD8B"}
         strokeWidth="7.83333"
         strokeLinecap="square"
         strokeLinejoin="round"

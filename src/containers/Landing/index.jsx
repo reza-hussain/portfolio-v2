@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 
 // assets
 import Profile from "../../assets/images/profile.png";
@@ -7,58 +7,66 @@ import TwoCircleArrow from "../../assets/icons/TwoCircleArrow";
 import Hamburger from "../../assets/icons/Hamburger";
 
 const paragraph =
-  "Place your trust in me to provide a seamless and hassle-free development experience";
+  "Place your trust in me to provide a efficient, user-friendly and robust development experience";
 
-const Landing = () => {
+const Landing = ({ setNavOpen }) => {
   const elements = paragraph.split(" ").map((word, idx) => {
     if (idx === 3)
       return (
-        <>
+        <Fragment key={idx}>
           <span>
             <StarPolygon />
           </span>
           <span>{word}</span>
-        </>
+        </Fragment>
       );
 
-    if (idx === 11)
+    if (idx === 12)
       return (
-        <>
+        <Fragment key={idx}>
           <span>
             <TwoCircleArrow />
           </span>
           <span>{word}</span>
-        </>
+        </Fragment>
       );
 
-    return <span>{word}</span>;
+    return <span key={idx}>{word}</span>;
   });
 
   return (
-    <div className="w-full flex py-[50px] justify-center items-center bg-themeBlack-dark max-h-screen h-screen text-themeWhite">
+    <div
+      id="home"
+      className="w-full flex flex-col-reverse lg:flex-row pt-[30px] lg:py-[50px] justify-center items-center bg-themeBlack-dark max-h-screen h-screen text-themeWhite"
+    >
       {/* LEFT SECTION */}
 
-      <span className="absolute left-6 top-4 cursor-pointer">
-        <Hamburger className="w-[50px]" />
+      <span
+        onClick={() => setNavOpen(true)}
+        className="fixed top-0 left-4 md:left-6 md:top-8 cursor-pointer z-50"
+      >
+        <Hamburger className=" w-[24px] lg:w-[50px]" />
       </span>
 
-      <div className="w-full basis-[50%] flex flex-col justify-start items-start pl-28">
-        <h4 className="text-themeGreen-light text-[36px]">Reza Hussain</h4>
-        <h3 className="text-themeWhite text-[72px] font-bold leading-[90px]">
+      <div className="w-full md:basis-[50%] flex flex-col justify-center md:justify-start items-start pl-12 md:pl-28">
+        <h4 className="w-full lg:w-auto text-themeGreen-light text-[18px] lg:text-[36px]">
+          Reza Hussain
+        </h4>
+        <h3 className="w-full lg:w-auto text-themeWhite text-[32px] lg:text-[72px] font-bold leading-[50px] lg:leading-[90px]">
           Freelance
           <br />
           Product
           <br />
           Developer
         </h3>
-        <div className="w-[62%]  mt-6 flex flex-wrap justify-start items-center gap-3 text-[24px] font-light">
+        <div className="w-full lg:w-[68%] mt-6 flex flex-wrap justify-start items-center gap-3 lg:text-[24px] font-light">
           {elements}
         </div>
       </div>
 
       {/* RIGHT SECTION */}
-      <div className="relative w-full p-8 flex justify-center items-center basis-[50%] h-full">
-        <img src={Profile} alt="" className="w-[80%] z-10" />
+      <div className="relative w-full p-8 flex justify-center items-center md:basis-[50%] h-full">
+        <img src={Profile} alt="" className="lg:w-[80%] z-10" />
       </div>
     </div>
   );
