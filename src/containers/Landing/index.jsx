@@ -37,7 +37,7 @@ const Landing = ({ setNavOpen }) => {
   return (
     <div
       id="home"
-      className="w-full flex flex-col-reverse lg:flex-row pt-[30px] lg:py-[50px] justify-center items-center bg-themeBlack-dark max-h-screen h-screen text-themeWhite"
+      className="w-[80%] xl:w-full mx-auto flex flex-col-reverse xl:flex-row pt-[30px] xl:py-[50px] justify-center items-center bg-themeBlack-dark max-h-screen h-screen text-themeWhite"
     >
       {/* LEFT SECTION */}
 
@@ -48,17 +48,17 @@ const Landing = ({ setNavOpen }) => {
         <Hamburger className=" w-[24px] lg:w-[50px]" />
       </span>
 
-      <div className="w-full md:basis-[50%] flex flex-col justify-center md:justify-start items-start pl-12 md:pl-28">
-        <h4 className="w-full lg:w-auto text-themeGreen-light text-[18px] lg:text-[36px]">
+      <div className="w-full xl:basis-[50%] flex flex-col justify-center md:justify-start items-start pl-12 md:pl-18">
+        <h4 className="w-full xl:w-auto text-themeGreen-light text-[18px] lg:text-[36px]">
           Reza Hussain
         </h4>
-        <h3 className="w-full lg:w-auto text-themeWhite text-[32px] lg:text-[72px] font-bold leading-[50px] lg:leading-[90px]">
-          Freelance
-          <br />
-          Product
-          <br />
-          Developer
-        </h3>
+        <div className="w-full lg:flex flex-wrap md:gap-2 xl:block lg:w-auto text-themeWhite text-[32px] md:text-[40px] lg:text-[72px] font-bold leading-[50px] lg:leading-[90px]">
+          <p>Freelance</p>
+
+          <p> Product</p>
+
+          <p>Developer</p>
+        </div>
         <div className="w-full lg:w-[68%] mt-6 flex flex-wrap justify-start items-center gap-3 lg:text-[24px] font-light">
           {elements}
         </div>

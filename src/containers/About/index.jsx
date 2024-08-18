@@ -14,7 +14,7 @@ const About = () => {
           Let's talk about me
         </h4>
 
-        <div className="w-full flex justify-between items-stretch text-[#939191]">
+        <div className="w-[80%] xl:w-full flex justify-between items-stretch text-[#939191]">
           <p className="basis-[28%] text-xl">
             Back in 2020, after seeing Apple’s iMac page, I decided to learn
             front-end development. That’s when I discovered how big the pool was

@@ -81,7 +81,7 @@ const Experience = () => {
           Experience
         </h4>
 
-        <div className="w-full flex flex-col justify-start items-center gap-40">
+        <div className="w-[80%] xl:w-full flex flex-col justify-start items-center gap-40">
           {experinceData?.map((item, idx) => (
             <div
               key={item.id}

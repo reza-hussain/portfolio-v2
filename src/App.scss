@@ -10,3 +10,59 @@ body {
   font-family: "satoshi", sans-serif;
   background-color: #1c1d1d;
 }
+
+.progressLine {
+  position: relative;
+  width: 100%;
+  height: 1px;
+  background-color: #55bd8b;
+  &::after {
+    animation: progress 4s linear;
+    height: 1px;
+    background-color: #1c1d1d;
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}
+
+.buttonBorder {
+  position: relative;
+  &::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 1px;
+    content: "";
+    display: block;
+    background: #1c1d1d;
+    transition: all 300ms linear;
+  }
+
+  &:hover {
+    &::after {
+      width: 100%;
+    }
+  }
+}
+
+@keyframes progress {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes progressMobile {
+  from {
+    height: 0;
+  }
+  to {
+    height: 100%;
+  }
+}

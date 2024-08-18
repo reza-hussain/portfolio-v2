@@ -12,7 +12,7 @@ const ArrowUpRight = ({ ...rest }) => {
     >
       <path
         d="M16.4905 48.9228L47.1318 18.2815M47.1318 18.2815L47.1318 41.2625M47.1318 18.2815L24.1508 18.2815"
-        stroke="#939191"
+        stroke={rest?.fill ?? "#939191"}
         strokeWidth="5"
         strokeLinecap="round"
         strokeLinejoin="round"
