@@ -48,7 +48,7 @@ const Landing = ({ setNavOpen }) => {
         <Hamburger className=" w-[24px] lg:w-[50px]" />
       </span>
 
-      <div className="w-full xl:basis-[50%] flex flex-col justify-center md:justify-start items-start pl-12 md:pl-18">
+      <div className="w-full xl:basis-[50%] flex flex-col justify-center md:justify-start items-start md:pl-20 md:mb-0 mb-14">
         <h4 className="w-full xl:w-auto text-themeGreen-light text-[18px] lg:text-[36px]">
           Reza Hussain
         </h4>
@@ -65,7 +65,7 @@ const Landing = ({ setNavOpen }) => {
       </div>
 
       {/* RIGHT SECTION */}
-      <div className="relative w-full p-8 flex justify-center items-center md:basis-[50%] h-full">
+      <div className="relative w-full md:p-8 flex justify-center items-center md:basis-[50%] h-full">
         <img src={Profile} alt="" className="lg:w-[80%] z-10" />
       </div>
     </div>

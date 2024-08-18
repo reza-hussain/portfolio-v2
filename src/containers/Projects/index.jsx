@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
+import { Splide, SplideSlide } from "@splidejs/react-splide";
 
 import ProjectPreview from "../../components/ProjectPreview";
 
@@ -24,12 +24,14 @@ const Projects = () => {
     arrows: false,
     autoplay: true,
     interval: 4000,
+    pauseOnFocus: false,
+    pauseOnHover: false,
   };
 
   return (
     <div id="projects" className="w-full bg-themeGreen-light">
       <div className="w-full max-w-[1280px] mx-auto flex flex-col justify-start items-center py-[50px]">
-        <h4 className="w-[80%] xl:w-full text-3xl lg:text-6xl text-themeBlack-light font-bold mb-[100px]">
+        <h4 className="w-[80%] xl:w-full text-3xl lg:text-6xl text-themeBlack-light font-bold  mb-14 md:mb-[100px]">
           Projects
         </h4>
         <div className="w-[80%] xl:w-full relative flex flex-col-reverse xl:flex-row justify-between items-stretch gap-6">
@@ -55,31 +57,37 @@ const Projects = () => {
                   </>
                 ))
             ) : (
-              <Splide
-                className="max-w-full rounded-3xl overflow-hidden p-5"
-                options={splideOptions}
-                onMove={(_, active) => setActiveItem(active)}
-              >
-                {Array(4)
-                  .fill()
-                  .map((_, idx) => (
-                    <SplideSlide>
-                      <ProjectItem
-                        key={idx}
-                        isActive={activeItem === idx}
-                        setActiveItem={() => setActiveItem(idx)}
-                        next={() =>
-                          setActiveItem(activeItem >= 3 ? 0 : activeItem + 1)
-                        }
-                        toggleProject={() => setOpenProject(idx)}
-                      />
-                    </SplideSlide>
-                  ))}
+              <>
+                <Splide
+                  className="max-w-full rounded-3xl overflow-hidden p-3 md:p-5"
+                  options={splideOptions}
+                  onMove={(_, active) => setActiveItem(active)}
+                >
+                  {Array(4)
+                    .fill()
+                    .map((_, idx) => (
+                      <>
+                        <SplideSlide>
+                          <ProjectItem
+                            key={idx}
+                            isActive={activeItem === idx}
+                            setActiveItem={() => setActiveItem(idx)}
+                            next={() =>
+                              setActiveItem(
+                                activeItem >= 3 ? 0 : activeItem + 1
+                              )
+                            }
+                            toggleProject={() => setOpenProject(idx)}
+                          />
+                        </SplideSlide>
+                      </>
+                    ))}
+                </Splide>
                 <ProjectPreview
-                  isOpen={openProject === activeItem}
+                  isOpen={openProject >= 0}
                   onClose={() => setOpenProject(undefined)}
                 />
-              </Splide>
+              </>
             )}
           </div>
 
@@ -133,7 +141,7 @@ const ProjectItem = ({ isActive, setActiveItem, next, toggleProject }) => {
     <>
       {!isWeb && (
         <div className="w-full basis-[45%] bg-themeGreen-dark rounded-2xl mb-5">
-          <div className="h-[600px]">gg</div>
+          <div className="lg:h-[600px] h-[300px]">gg</div>
         </div>
       )}
       <div
@@ -152,8 +160,8 @@ const ProjectItem = ({ isActive, setActiveItem, next, toggleProject }) => {
           Dashboard Application
         </h3>
         <p
-          className={`transition-all duration-300 ease-in-out ${
-            isActive ? "opacity-100 h-auto" : "xl:opacity-0 xl:h-0"
+          className={`transition-all duration-300 ease-in-out flex-grow  ${
+            isActive ? "opacity-100 h-auto" : "h-auto xl:opacity-0 xl:h-0"
           }`}
         >
           Photograph the receipt immediately upon purchase and the transaction
@@ -163,8 +171,8 @@ const ProjectItem = ({ isActive, setActiveItem, next, toggleProject }) => {
         </p>
 
         <button
-          className={` mt-[12px] right-0 bottom-5 buttonBorder ${
-            isActive ? "visible" : "hidden"
+          className={` right-0 bottom-0 buttonBorder ${
+            isActive ? "xl:visible" : "xl:hidden"
           }`}
           onClick={toggleProject}
         >

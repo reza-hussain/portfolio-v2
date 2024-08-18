@@ -39,7 +39,7 @@ const ProjectPreview = ({ isOpen, onClose }) => {
       ></div>
       <div
         ref={ref}
-        className={`w-[90vw] z-50 fixed left-0 right-0 bottom-0 mx-auto h-[70vh] bg-themeBlack-dark flex
+        className={`w-[90vw] z-50 fixed left-0 right-0 bottom-0 mx-auto h-[90vh] bg-themeBlack-dark flex
             justify-center items-center translate-y-[170vh] p-8 rounded-t-3xl transition-all duration-300 ease-in-out `}
       >
         <div className="w-full flex flex-col justify-start items-start h-full">
@@ -50,16 +50,25 @@ const ProjectPreview = ({ isOpen, onClose }) => {
               width={30}
               fill="#55bd8b"
             />
-            <h3 className="w-full text-right text-xl text-themeGreen-dark">
+            <h3 className="w-full text-right md:text-xl text-themeGreen-dark">
               Dashboard App
             </h3>
           </div>
-          <div className="w-full h-[500px] flex flex-col justify-start items-center overflow-auto">
+          <div className="w-full h-auto flex flex-col justify-start items-center overflow-auto text-[#939191] gap-8">
             <img
-              className="max-w-[75%] mx-auto rounded-2xl"
+              className="w-full md:max-w-[50%] mx-auto rounded-2xl"
               src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=2874&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt=""
             />
+            <p>
+              Zod is a TypeScript-first schema declaration and validation
+              library. It allows you to define the shape of your data using a
+              schema and validate that data against that schema. It is designed
+              to be easy to use, type-safe, and performant—making it a great
+              tool for ensuring that the data in your application is valid and
+              consistent. Imagine writing less boilerplate code and letting this
+              library handle the heavy lifting of data validation.
+            </p>
           </div>
         </div>
       </div>

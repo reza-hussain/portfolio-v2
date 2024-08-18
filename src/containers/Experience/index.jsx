@@ -77,7 +77,7 @@ const Experience = () => {
   return (
     <div id="experience" className="w-full bg-themeBlack-dark container">
       <div className="w-full max-w-[1280px] mx-auto flex flex-col justify-start items-center py-[50px]">
-        <h4 className="w-[80%] xl:w-full text-3xl lg:text-6xl text-themeGreen-light font-bold mb-[100px]">
+        <h4 className="w-[80%] xl:w-full text-3xl lg:text-6xl text-themeGreen-light font-bold mb-14 md:mb-[100px]">
           Experience
         </h4>
 
@@ -85,7 +85,7 @@ const Experience = () => {
           {experinceData?.map((item, idx) => (
             <div
               key={item.id}
-              className={`w-full flex justify-between items-stretch ${
+              className={`w-full flex xl:flex-row flex-col-reverse justify-between xl:items-stretch xl:gap-0 gap-12 ${
                 idx % 2 === 0 ? "flex-row" : "flex-row-reverse"
               }`}
             >
@@ -93,13 +93,13 @@ const Experience = () => {
                 <h4 className="w-full text-right text-lg text-[#939191]">
                   {item.period}
                 </h4>
-                <h3 className="w-full text-right text-themeGreen-dark text-4xl mb-10 font-bold">
+                <h3 className="w-full text-right text-themeGreen-dark text-2xl md:text-4xl mb-5 md:mb-10 font-bold">
                   {item.role}
                 </h3>
 
                 <ul className="w-full flex flex-col justify-start items-start gap-5">
                   {item.description.map((data) => (
-                    <li key={data.id} className="text-lg text-[#939191]">
+                    <li key={data.id} className="md:text-lg text-[#939191]">
                       {data.content}
                     </li>
                   ))}
@@ -109,14 +109,14 @@ const Experience = () => {
                   <a href={item.link} target="_blank" rel="noreferrer">
                     <ArrowUpRight width={24} />
                   </a>
-                  <h4 className="text-2xl text-themeGreen-dark font-medium">
+                  <h4 className="text-lg md:text-2xl text-themeGreen-dark font-medium">
                     {item.name}
                   </h4>
                 </div>
               </div>
 
-              <div className="w-full basis-[40%] rounded-2xl bg-themeGreen-light flex justify-center items-center">
-                <img className="w-1/2" src={item.logo} alt="" />
+              <div className="w-full xl:basis-[40%] h-[200px] md:h-[400px] xl:h-auto rounded-2xl bg-themeGreen-light flex justify-center items-center">
+                <img className="w-1/4 xl:w-1/2" src={item.logo} alt="" />
               </div>
             </div>
           ))}
