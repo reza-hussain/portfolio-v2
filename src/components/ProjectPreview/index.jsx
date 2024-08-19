@@ -1,7 +1,9 @@
 import React, { useEffect, useRef } from "react";
 
+import parse from "html-react-parser";
+
 import ArrowUpRight from "../../assets/icons/ArrowUpRight";
-const ProjectPreview = ({ isOpen, onClose }) => {
+const ProjectPreview = ({ project, isOpen, onClose }) => {
   const ref = useRef(null);
   const blurRef = useRef(null);
 
@@ -29,6 +31,10 @@ const ProjectPreview = ({ isOpen, onClose }) => {
     }, 300);
   }, [isOpen]);
 
+  useEffect(() => {
+    if (project?.openProject >= 0) console.log({ project });
+  }, [project]);
+
   return (
     <>
       <div
@@ -51,24 +57,19 @@ const ProjectPreview = ({ isOpen, onClose }) => {
               fill="#55bd8b"
             />
             <h3 className="w-full text-right md:text-xl text-themeGreen-dark">
-              Dashboard App
+              {project?.name ?? ""}
             </h3>
           </div>
           <div className="w-full h-auto flex flex-col justify-start items-center overflow-auto text-[#939191] gap-8">
             <img
               className="w-full md:max-w-[50%] mx-auto rounded-2xl"
-              src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=2874&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              // src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=2874&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt=""
+              src={project?.img ?? ""}
             />
-            <p>
-              Zod is a TypeScript-first schema declaration and validation
-              library. It allows you to define the shape of your data using a
-              schema and validate that data against that schema. It is designed
-              to be easy to use, type-safe, and performant—making it a great
-              tool for ensuring that the data in your application is valid and
-              consistent. Imagine writing less boilerplate code and letting this
-              library handle the heavy lifting of data validation.
-            </p>
+            <div className="projectDescription">
+              {parse(project?.description ?? "")}
+            </div>
           </div>
         </div>
       </div>

@@ -4,6 +4,7 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import ProjectPreview from "../../components/ProjectPreview";
 
 import useScreenWidth from "../../hooks/useScreenWidth";
+import { projects } from "../../constants/projects";
 
 import "@splidejs/react-splide/css";
 
@@ -35,27 +36,29 @@ const Projects = () => {
           Projects
         </h4>
         <div className="w-[80%] xl:w-full relative flex flex-col-reverse xl:flex-row justify-between items-stretch gap-6">
-          <div className="w-full basis-[40%] flex xl:flex-col justify-start items-center gap-12 xl:gap-6">
+          <div className="w-full basis-[40%] flex xl:flex-col justify-start items-center gap-6 xl:gap-6">
             {isWeb ? (
-              Array(4)
-                .fill()
-                .map((_, idx) => (
-                  <>
-                    <ProjectItem
-                      key={idx}
-                      isActive={activeItem === idx}
-                      setActiveItem={() => setActiveItem(idx)}
-                      next={() =>
-                        setActiveItem(activeItem >= 3 ? 0 : activeItem + 1)
-                      }
-                      toggleProject={() => setOpenProject(idx)}
-                    />
-                    <ProjectPreview
-                      isOpen={openProject === idx}
-                      onClose={() => setOpenProject(undefined)}
-                    />
-                  </>
-                ))
+              projects.map((item, idx) => (
+                <>
+                  <ProjectItem
+                    project={item}
+                    key={idx}
+                    isActive={activeItem === idx}
+                    setActiveItem={() => setActiveItem(idx)}
+                    next={() =>
+                      setActiveItem(
+                        activeItem >= projects?.length - 1 ? 0 : activeItem + 1
+                      )
+                    }
+                    toggleProject={() => setOpenProject(idx)}
+                  />
+                  <ProjectPreview
+                    isOpen={openProject === idx}
+                    onClose={() => setOpenProject(undefined)}
+                    project={projects[openProject]}
+                  />
+                </>
+              ))
             ) : (
               <>
                 <Splide
@@ -63,27 +66,25 @@ const Projects = () => {
                   options={splideOptions}
                   onMove={(_, active) => setActiveItem(active)}
                 >
-                  {Array(4)
-                    .fill()
-                    .map((_, idx) => (
-                      <>
-                        <SplideSlide>
-                          <ProjectItem
-                            key={idx}
-                            isActive={activeItem === idx}
-                            setActiveItem={() => setActiveItem(idx)}
-                            next={() =>
-                              setActiveItem(
-                                activeItem >= 3 ? 0 : activeItem + 1
-                              )
-                            }
-                            toggleProject={() => setOpenProject(idx)}
-                          />
-                        </SplideSlide>
-                      </>
-                    ))}
+                  {projects.map((item, idx) => (
+                    <>
+                      <SplideSlide>
+                        <ProjectItem
+                          project={item}
+                          key={idx}
+                          isActive={activeItem === idx}
+                          setActiveItem={() => setActiveItem(idx)}
+                          next={() =>
+                            setActiveItem(activeItem >= 3 ? 0 : activeItem + 1)
+                          }
+                          toggleProject={() => setOpenProject(idx)}
+                        />
+                      </SplideSlide>
+                    </>
+                  ))}
                 </Splide>
                 <ProjectPreview
+                  project={projects[openProject]}
                   isOpen={openProject >= 0}
                   onClose={() => setOpenProject(undefined)}
                 />
@@ -92,8 +93,12 @@ const Projects = () => {
           </div>
 
           {isWeb && (
-            <div className="w-full basis-[45%] bg-themeGreen-dark rounded-2xl">
-              <div className="h-[600px]">gg</div>
+            <div className="w-full basis-[45%] bg-themeGreen-dark rounded-2xl overflow-hidden">
+              <img
+                src={projects[activeItem]?.img}
+                className="h-[600px] w-full object-cover"
+                alt=""
+              />
             </div>
           )}
         </div>
@@ -104,7 +109,13 @@ const Projects = () => {
 
 export default Projects;
 
-const ProjectItem = ({ isActive, setActiveItem, next, toggleProject }) => {
+const ProjectItem = ({
+  project,
+  isActive,
+  setActiveItem,
+  next,
+  toggleProject,
+}) => {
   const parentRef = useRef();
   const headerRef = useRef();
 
@@ -140,50 +151,53 @@ const ProjectItem = ({ isActive, setActiveItem, next, toggleProject }) => {
   return (
     <>
       {!isWeb && (
-        <div className="w-full basis-[45%] bg-themeGreen-dark rounded-2xl mb-5">
-          <div className="lg:h-[600px] h-[300px]">gg</div>
+        <div className="w-full basis-[45%] bg-themeGreen-dark rounded-2xl overflow-hidden mb-5">
+          <img
+            src={project?.img}
+            className="h-[300px] w-full object-cover"
+            alt=""
+          />
         </div>
       )}
       <div
         ref={parentRef}
-        className="w-full relative cursor-pointer flex flex-col justify-start items-start gap-6 transition-all duration-300 ease-linear lg:overflow-x-visible  xl:overflow-hidden"
-        style={isWeb ? { height: height, flexGrow: 1 } : { height: "auto" }}
+        className={`w-full relative cursor-pointer flex flex-col justify-start items-start gap-10 transition-all duration-300 ease-linear lg:overflow-x-visible  xl:overflow-hidden`}
+        style={isWeb ? { height: height } : { height: "auto" }}
         onClick={setActiveItem}
       >
         <h3
           ref={headerRef}
           style={{ height: isWeb ? headerRef?.current?.clientHeight : "auto" }}
-          className={` text-xl xl:text-5xl font-bold transition-all duration-300 ease-in-out  ${
+          className={` text-xl xl:text-3xl font-bold transition-all duration-300 ease-in-out  ${
             isActive ? "text-themeBlack-dark" : "text-[#585656]"
           }`}
         >
-          Dashboard Application
+          {project.name}
         </h3>
         <p
           className={`transition-all duration-300 ease-in-out flex-grow  ${
             isActive ? "opacity-100 h-auto" : "h-auto xl:opacity-0 xl:h-0"
           }`}
         >
-          Photograph the receipt immediately upon purchase and the transaction
-          is sent all the way into the accounting system.Photograph the receipt
-          immediately upon purchase and the transaction is sent all the way into
-          the accounting system.
+          {project.slug}
         </p>
 
-        <button
-          className={` right-0 bottom-0 buttonBorder ${
-            isActive ? "xl:visible" : "xl:hidden"
-          }`}
-          onClick={toggleProject}
-        >
-          Read More
-        </button>
+        <div className="w-full flex flex-col justify-end items-start gap-4">
+          <button
+            className={` right-0 bottom-0 buttonBorder ${
+              isActive ? "xl:visible" : "xl:hidden"
+            }`}
+            onClick={toggleProject}
+          >
+            Read More
+          </button>
 
-        <span
-          className={` mt-auto transition-all duration-300 ease-in-out  ${
-            isActive ? "progressLine" : ""
-          }`}
-        ></span>
+          <span
+            className={` mt-auto transition-all duration-300 ease-in-out  ${
+              isActive ? "progressLine" : ""
+            }`}
+          ></span>
+        </div>
       </div>
     </>
   );

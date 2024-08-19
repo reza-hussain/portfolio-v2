@@ -1,8 +1,6 @@
 import React from "react";
 
 const Github = ({ ...rest }) => {
-  console.log({ rest });
-
   return (
     <svg
       width="48"

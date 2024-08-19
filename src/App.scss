@@ -49,6 +49,54 @@ body {
   }
 }
 
+.projectDescription {
+  max-width: 90%;
+  h3 {
+    font-size: 2rem;
+    color: #fafafa;
+    font-weight: 500;
+    line-height: 2rem;
+    margin: 2rem 0;
+  }
+
+  p,
+  li {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  strong {
+    color: #fafafa;
+  }
+
+  ul {
+    list-style: circle;
+
+    li {
+      margin-left: 2rem;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    h3 {
+      font-size: 1.5rem;
+    }
+    p,
+    li {
+      font-size: 1rem;
+    }
+
+    ul li {
+      margin-left: 1.5rem;
+    }
+  }
+}
+
+.splide__list {
+  display: flex;
+  align-items: stretch;
+}
+
 @keyframes progress {
   from {
     width: 0;
