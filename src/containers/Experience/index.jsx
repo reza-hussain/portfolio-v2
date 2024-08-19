@@ -86,7 +86,7 @@ const Experience = () => {
             <div
               key={item.id}
               className={`w-full flex xl:flex-row flex-col-reverse justify-between xl:items-stretch xl:gap-0 gap-12 ${
-                idx % 2 === 0 ? "flex-row" : "flex-row-reverse"
+                idx % 2 !== 0 ? "flex-row" : "flex-row-reverse"
               }`}
             >
               <div className="w-full basis-1/2 flex flex-col gap-4 justify-start items-center">
