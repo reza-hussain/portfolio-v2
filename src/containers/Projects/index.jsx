@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { Fragment, useEffect, useRef, useState } from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 
 import ProjectPreview from "../../components/ProjectPreview";
@@ -39,7 +39,7 @@ const Projects = () => {
           <div className="w-full basis-[40%] flex xl:flex-col justify-start items-center gap-6 xl:gap-6">
             {isWeb ? (
               projects.map((item, idx) => (
-                <>
+                <Fragment key={idx}>
                   <ProjectItem
                     project={item}
                     key={idx}
@@ -57,7 +57,7 @@ const Projects = () => {
                     onClose={() => setOpenProject(undefined)}
                     project={projects[openProject]}
                   />
-                </>
+                </Fragment>
               ))
             ) : (
               <>
@@ -67,11 +67,10 @@ const Projects = () => {
                   onMove={(_, active) => setActiveItem(active)}
                 >
                   {projects.map((item, idx) => (
-                    <>
+                    <Fragment key={idx}>
                       <SplideSlide>
                         <ProjectItem
                           project={item}
-                          key={idx}
                           isActive={activeItem === idx}
                           setActiveItem={() => setActiveItem(idx)}
                           next={() =>
@@ -80,7 +79,7 @@ const Projects = () => {
                           toggleProject={() => setOpenProject(idx)}
                         />
                       </SplideSlide>
-                    </>
+                    </Fragment>
                   ))}
                 </Splide>
                 <ProjectPreview
