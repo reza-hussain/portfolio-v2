@@ -127,6 +127,6 @@ export const projects = [
 
     <p>This project not only demonstrated my ability to manage and execute full-stack development tasks but also showcased my skills in UI/UX design and real-time application development.</p>`,
     img: Occulead,
-    slug: `This project involved creating a landing page for a company revolutionizing cybersecurity with advanced Large Language Models (LLMs) and AI technology. The project was secured through Upwork and included ongoing work on the company's primary product.`,
+    slug: `This freelance project involved the development of a comprehensive medical appointment booking platform designed to facilitate interactions between clinics and companies. The platform, built using a modern tech stack, aimed to streamline the appointment scheduling process, enhance communication, and improve operational efficiency for both parties involved.`,
   },
 ];
