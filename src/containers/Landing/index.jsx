@@ -53,10 +53,9 @@ const Landing = ({ setNavOpen }) => {
           Reza Hussain
         </h4>
         <div className="w-full lg:flex flex-wrap md:gap-2 xl:block lg:w-auto text-themeWhite text-[32px] md:text-[40px] lg:text-[72px] font-bold leading-[50px] lg:leading-[90px]">
-
-          <p> Product</p>
-
+          <p>React</p>
           <p>Developer</p>
+          <p className="text-themeGreen-dark italic text-[36px]">[ SDE-2 ]</p>
         </div>
         <div className="w-full lg:w-[68%] mt-6 flex flex-wrap justify-start items-center gap-3 lg:text-[24px] font-light">
           {elements}

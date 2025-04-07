@@ -4,8 +4,34 @@ import ArrowUpRight from "../../assets/icons/ArrowUpRight";
 
 import SB from "../../assets/images/sb.png";
 import GHM from "../../assets/images/ghm.png";
+import THENCE from "../../assets/images/thence.png";
 
 const experinceData = [
+  {
+    id: "thence",
+    name: "Thence.co",
+    role: "React Developer - SDE 2",
+    description: [
+      {
+        id: 0,
+        content:
+          "Designed and deployed scalable features using Next.js and TypeScript, ensuring high performance and maintainability.",
+      },
+      {
+        id: 1,
+        content:
+          "Translated Figma designs into pixel-perfect, responsive components using Tailwind CSS, React, and modern front-end development tools.",
+      },
+      {
+        id: 2,
+        content:
+          "Implemented API integrations and developed cross-functional solutions, including enhancements to overall user experience through feedback-driven improvements.",
+      },
+    ],
+    logo: THENCE,
+    period: "September 2024 - Present",
+    link: "https://www.thence.co/",
+  },
   {
     id: "sb",
     name: "Sketch Brahma Technologies",
@@ -70,6 +96,37 @@ const experinceData = [
     logo: GHM,
     period: "Jan 2022 - Jan 2023",
     link: "https://www.ghmev.com/",
+  },
+
+  {
+    id: "sb",
+    name: "Sketch Brahma Technologies",
+    role: "Product Developer",
+    description: [
+      {
+        id: 0,
+        content:
+          "Served as a project lead, ensuring timely and successful product delivery with a dedicated team",
+      },
+      {
+        id: 1,
+        content:
+          "Managed projects for key clients, ensuring satisfaction and repeat business opportunities.",
+      },
+      {
+        id: 2,
+        content:
+          "Developed highly scalable products, converting Figma designs to code, implementing responsive UIs, and deploying applications.",
+      },
+      {
+        id: 3,
+        content:
+          "Secured a crucial project by showcasing superior code quality and performance.",
+      },
+    ],
+    logo: SB,
+    period: "March 2023 - April 2024",
+    link: "https://sketchbrahma.com/",
   },
 ];
 

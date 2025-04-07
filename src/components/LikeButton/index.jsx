@@ -25,20 +25,23 @@ const LikeButton = () => {
   const hasUserLiked = JSON.parse(localStorage.getItem("like"));
 
   const addLike = async () => {
+    console.log("ca");
+
     if (hasUserLiked) {
       // If the user has already liked, then the like gets removed
 
-      const response = await axios.delete(
-        `${process.env.REACT_APP_MONGO_URI}/likes`,
-        { userId: user }
-      );
-      return response?.data;
+      // const response = await axios.delete(
+      //   `${process.env.REACT_APP_MONGO_URI}/likes`,
+      //   { userId: user }
+      // );
+      return;
     } else {
       // If user has not liked then add like
-      const response = await axios.post(
-        `${process.env.REACT_APP_MONGO_URI}/likes`,
-        { userId: user }
+      const response = await axios.get(
+        `/.netlify/backend/index.js?userId=${user}`
       );
+
+      console.log({ response });
 
       return response?.data;
     }
@@ -50,9 +53,8 @@ const LikeButton = () => {
     setTimeout(() => {
       setShowAnimation(false);
     }, 7000);
+    const response = !disabled ? await addLike() : null;
     setDisabled(true);
-
-    const response = disabled ? await addLike() : null;
 
     if (response) {
       setDisabled(false);
@@ -62,7 +64,7 @@ const LikeButton = () => {
   useEffect(() => {
     hasUserLiked ? setIsLiked(true) : setIsLiked(false);
 
-    getLikes();
+    // getLikes();
   }, []);
 
   return (
@@ -78,8 +80,10 @@ const LikeButton = () => {
       )}
 
       <div
-        ref={likeRef}
         onClick={handleClick}
+        id="thumbs-up"
+        ref={likeRef}
+        // onClick={handleClick}
         className={`fixed right-10 bottom-10 w-[75px] h-[75px] xl:w-[100px] xl:h-[100px] bg-themeBlack-light group hover:bg-themeGreen-dark flex 
     justify-center items-center rounded-full overflow-hidden cursor-pointer z-[200] transition-all duration-300 ease-in-out
     `}
