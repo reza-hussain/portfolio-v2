@@ -7,14 +7,14 @@ import Projects from "./containers/Projects";
 import Experience from "./containers/Experience";
 import About from "./containers/About";
 import Navbar from "./components/Navbar";
-import LikeButton from "./components/LikeButton";
+// import LikeButton from "./components/LikeButton";
 
 const App = () => {
   const [navOpen, setNavOpen] = useState(false);
   return (
     <BrowserRouter>
       <Navbar navOpen={navOpen} setNavOpen={setNavOpen} />
-      <LikeButton />
+      {/* <LikeButton /> */}
       <div>
         <Landing setNavOpen={setNavOpen} />
         <QuickLook />
