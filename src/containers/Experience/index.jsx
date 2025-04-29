@@ -97,37 +97,6 @@ const experinceData = [
     period: "Jan 2022 - Jan 2023",
     link: "https://www.ghmev.com/",
   },
-
-  {
-    id: "sb",
-    name: "Sketch Brahma Technologies",
-    role: "Product Developer",
-    description: [
-      {
-        id: 0,
-        content:
-          "Served as a project lead, ensuring timely and successful product delivery with a dedicated team",
-      },
-      {
-        id: 1,
-        content:
-          "Managed projects for key clients, ensuring satisfaction and repeat business opportunities.",
-      },
-      {
-        id: 2,
-        content:
-          "Developed highly scalable products, converting Figma designs to code, implementing responsive UIs, and deploying applications.",
-      },
-      {
-        id: 3,
-        content:
-          "Secured a crucial project by showcasing superior code quality and performance.",
-      },
-    ],
-    logo: SB,
-    period: "March 2023 - April 2024",
-    link: "https://sketchbrahma.com/",
-  },
 ];
 
 const Experience = () => {
