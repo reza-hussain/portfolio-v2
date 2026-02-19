@@ -14,19 +14,22 @@ const experinceData = [
     description: [
       {
         id: 0,
-        content: `Built and scaled a stock market trading application for Indiabulls using React.js, Next.js, and Redux.
-                  Developed a custom TradingView UDF adapter from scratch to integrate proprietary trading algorithms. Optimized
-                  API caching and state management to improve performance, responsiveness, and data consistency.`,
+        content:
+          "Designed and deployed scalable features using Next.js and TypeScript, ensuring high performance and maintainability.",
       },
       {
         id: 1,
-        content: ` Developed a high-impact landing page for Tanishq featuring complex GSAP-driven animations, delivering
-the project on schedule and to full client satisfaction. The solution was engineered for optimal performance, ensuring
-fast load times through efficient implementation and best-in-class front-end optimization techniques.`,
+        content:
+          "Translated Figma designs into pixel-perfect, responsive components using Tailwind CSS, React, and modern front-end development tools.",
+      },
+      {
+        id: 2,
+        content:
+          "Implemented API integrations and developed cross-functional solutions, including enhancements to overall user experience through feedback-driven improvements.",
       },
     ],
     logo: THENCE,
-    period: "September 2024 - February 2026",
+    period: "September 2024 - Present",
     link: "https://www.thence.co/",
   },
   {
@@ -93,6 +96,37 @@ fast load times through efficient implementation and best-in-class front-end opt
     logo: GHM,
     period: "Jan 2022 - Jan 2023",
     link: "https://www.ghmev.com/",
+  },
+
+  {
+    id: "sb",
+    name: "Sketch Brahma Technologies",
+    role: "Product Developer",
+    description: [
+      {
+        id: 0,
+        content:
+          "Served as a project lead, ensuring timely and successful product delivery with a dedicated team",
+      },
+      {
+        id: 1,
+        content:
+          "Managed projects for key clients, ensuring satisfaction and repeat business opportunities.",
+      },
+      {
+        id: 2,
+        content:
+          "Developed highly scalable products, converting Figma designs to code, implementing responsive UIs, and deploying applications.",
+      },
+      {
+        id: 3,
+        content:
+          "Secured a crucial project by showcasing superior code quality and performance.",
+      },
+    ],
+    logo: SB,
+    period: "March 2023 - April 2024",
+    link: "https://sketchbrahma.com/",
   },
 ];
 
