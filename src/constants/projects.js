@@ -1,8 +1,49 @@
 import Titan from "../assets/images/titan.png";
 import Pinewheel from "../assets/images/pinewheel.png";
 import Occulead from "../assets/images/occulead.png";
+import IndiabullsTrading from "../assets/images/indiabulls.png";
 
 export const projects = [
+  {
+    name: "Indiabulls Stock Trading Platform",
+    description: `
+    <h3>Project Overview:</h3>
+    <p>This project involved building and scaling a high-performance stock market trading application for Indiabulls. The platform was engineered to handle high-frequency data updates and provide a seamless trading experience for retail and institutional investors, focusing on speed, reliability, and real-time data visualization.</p>
+
+    <h3>Tech Stack:</h3>
+    <ul>
+        <li><strong>Frontend:</strong>Next.js, Tailwind CSS</li>
+        <li><strong>State Management:</strong> Redux</li>
+        <li><strong>Data Visualization:</strong> TradingView (Custom UDF Integration)</li>
+        <li><strong>Real-Time Data:</strong> WebSockets</li>
+        <li><strong>Optimization:</strong> Custom API Caching Layers</li>
+    </ul>
+
+    <h3>My Role:</h3>
+    <p>I served as a front-end developer focused on the core trading engine and frontend architecture. My primary responsibility was bridging the gap between complex proprietary trading algorithms and a responsive user interface, ensuring that millisecond-level data changes were reflected accurately across the application.</p>
+
+    <h3>Key Features:</h3>
+    <ul>
+        <li><strong>Custom TradingView Integration:</strong> Developed a bespoke UDF (Universal Data Feed) adapter from scratch to connect proprietary trading algorithms with TradingView’s charting library.</li>
+        <li><strong>Live Market Feed:</strong> Implementation of WebSockets to provide real-time, low-latency streaming of stock prices, indices, and market depth.</li>
+        <li><strong>Advanced State Management:</strong> Leveraged Redux to maintain a complex global state, ensuring data consistency across multiple trading screens and watchlists.</li>
+        <li><strong>Optimized API Caching:</strong> Built a custom caching layer to reduce redundant server requests, significantly improving platform responsiveness during peak trading hours.</li>
+        <li><strong>Scalable Architecture:</strong> Utilized Next.js for optimized rendering and performance, allowing the platform to scale effectively as the user base grew.</li>
+        <li><strong>Responsive Trading Interface:</strong> A high-fidelity UI designed for rapid execution, allowing users to place, modify, and cancel orders with minimal friction.</li>
+    </ul>
+
+    <h3>Challenges & Solutions:</h3>
+    <p><strong>Data Synchronization:</strong> Handling live market feeds while maintaining UI performance is a common bottleneck. I optimized the Redux store and implemented selective re-rendering to ensure the interface remained fluid even during high market volatility.</p>
+    <p><strong>Proprietary Algorithm Integration:</strong> Standard charting tools often struggle with non-standard data. By building a custom UDF adapter, I enabled the seamless visualization of specialized trading indicators that were unique to the Indiabulls ecosystem.</p>
+    <p><strong>Latency Reduction:</strong> In trading, every millisecond counts. I implemented aggressive API caching and optimized WebSocket message parsing to minimize the "tick-to-trade" time experienced by the end-user.</p>
+
+    <h3>Results:</h3>
+    <p>The platform successfully scaled to meet the demands of a major financial institution, providing users with a robust and reliable tool for market analysis and execution. The custom integration of trading algorithms gave Indiabulls a competitive edge in data visualization, resulting in improved user retention and platform engagement.</p>
+
+    <p>This project highlights my expertise in building latency-sensitive applications, complex third-party integrations, and scalable frontend architectures within the FinTech sector.</p>`,
+    img: IndiabullsTrading, // Replace with your actual image variable
+    slug: `Built and scaled a high-performance stock market trading application for Indiabulls using React.js, Next.js, and Redux, featuring custom TradingView integrations and real-time WebSocket feeds.`,
+  },
   {
     name: "Employee Portal for Titan Company Ltd.",
     description: `<div>

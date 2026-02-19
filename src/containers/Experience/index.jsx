@@ -14,22 +14,19 @@ const experinceData = [
     description: [
       {
         id: 0,
-        content:
-          "Designed and deployed scalable features using Next.js and TypeScript, ensuring high performance and maintainability.",
+        content: `Built and scaled a stock market trading application for Indiabulls using React.js, Next.js, and Redux.
+                  Developed a custom TradingView UDF adapter from scratch to integrate proprietary trading algorithms. Optimized
+                  API caching and state management to improve performance, responsiveness, and data consistency.`,
       },
       {
         id: 1,
-        content:
-          "Translated Figma designs into pixel-perfect, responsive components using Tailwind CSS, React, and modern front-end development tools.",
-      },
-      {
-        id: 2,
-        content:
-          "Implemented API integrations and developed cross-functional solutions, including enhancements to overall user experience through feedback-driven improvements.",
+        content: ` Developed a high-impact landing page for Tanishq featuring complex GSAP-driven animations, delivering
+the project on schedule and to full client satisfaction. The solution was engineered for optimal performance, ensuring
+fast load times through efficient implementation and best-in-class front-end optimization techniques.`,
       },
     ],
     logo: THENCE,
-    period: "September 2024 - Present",
+    period: "September 2024 - February 2026",
     link: "https://www.thence.co/",
   },
   {
